@@ -8,7 +8,7 @@ src = "src"
 build-dir = "book"
 
 [output.html]
-git-repository-url = "https://github.com/YukunHan1999/para"
+git-repository-url = "https://github.com/YukunHan1999/YukunHan1999.github.io"
 default-theme = "light"
 preferred-dark-theme = "ayu"
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
