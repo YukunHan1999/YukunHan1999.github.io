@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-1c17f6c6.js";
+            window.path_to_searchindex_js = "searchindex-2b6eef38.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-fddf10a8.js"></script>
+        <script src="toc-fd810adb.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -176,44 +176,79 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
-<p>Resources（资源：你的静态依赖库）
-定义： 你感兴趣、可能有用，但目前没有任何项目或领域直接依赖的纯静态主题或参考资料。
-硬核标准： 绝大多数人把这里变成了“垃圾收集站”。看到好文章点个收藏放这里？那是慢性自杀。
-管理逻辑： 这里的每个分类必须足够具体，像第方三库一样随时准备被 Projects 调用。比如 Linux内核漏洞PoC集锦、常用的CMake模板。如果一堆资料放进来超过半年你没点开过，说明它对你毫无价值。</p>
+<p>记录以后可以使用到的主题资源</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="1-why-async-is-different-in-rust"><a class="header" href="#1-why-async-is-different-in-rust">1. Why Async is Different in Rust</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="2-the-future-trait"><a class="header" href="#2-the-future-trait">2. The Future Trait</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="3-how-poll-works"><a class="header" href="#3-how-poll-works">3. How Poll Works</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="4-pin-and-unpin"><a class="header" href="#4-pin-and-unpin">4. Pin and Unpin</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="5-the-state-machine-reveal"><a class="header" href="#5-the-state-machine-reveal">5. The State Machine Reveal</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="6-building-futures-by-hand"><a class="header" href="#6-building-futures-by-hand">6. Building Futures by Hand</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="7-executors-and-runtimes"><a class="header" href="#7-executors-and-runtimes">7. Executors and Runtimes</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="8-tokio-deep-dive"><a class="header" href="#8-tokio-deep-dive">8. Tokio Deep Dive</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="9-when-tokio-isnt-the-right-fit"><a class="header" href="#9-when-tokio-isnt-the-right-fit">9. When Tokio Isn’t the Right Fit</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="10-async-traits"><a class="header" href="#10-async-traits">10. Async Traits</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="11-streams-and-asynciterator"><a class="header" href="#11-streams-and-asynciterator">11. Streams and AsyncIterator</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="12-common-pitfalls"><a class="header" href="#12-common-pitfalls">12. Common Pitfalls</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="13-production-patterns"><a class="header" href="#13-production-patterns">13. Production Patterns</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="14-async-is-an-optimization-not-an-architecture"><a class="header" href="#14-async-is-an-optimization-not-an-architecture">14. Async Is an Optimization, Not an Architecture</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="15-exercises"><a class="header" href="#15-exercises">15. Exercises</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="summary-and-reference-card"><a class="header" href="#summary-and-reference-card">Summary and Reference Card</a></h1>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="capstone-project-async-chat-server"><a class="header" href="#capstone-project-async-chat-server">Capstone Project: Async Chat Server</a></h1>
+<h1 id="test-rust"><a class="header" href="#test-rust">Test Rust</a></h1>
+<h2 id="1-基础练习"><a class="header" href="#1-基础练习">1. 基础练习</a></h2>
+<pre><code class="language-bash">1. 使用cargo创建项目并运行
+2. 声明多种类型变量并打印
+    2.1. 尝试不同类型的变量运算
+    2.2. 尝试类型转换后运算
+    2.3. 尝试声名变量后不赋值然后直接使用
+    2.4. 尝试对没有mut声明的变量进行修改
+3. 声明一个函数并调用
+    3.1. 尝试定义带参数的函数并调用
+    3.2. 尝试定义带返回值的函数并调用
+    3.3. 尝试函数返回值的不带return和;的方式
+4. 定义一个字符串
+    4.1. 尝试String.from("") || "".to_string() || format!("")
+    4.2. 尝试push || push_str
+    4.3. 尝试slice = &amp;str
+5. 所有权体会move, copy, borrow, borrow mutable
+    5.1. move 使用函数String参数把所有权转移走后再使用
+    5.2. copy 使用函数u32参数把所有权复制后再使用
+    5.3. borrow 使用函数&amp;String参数把所有权借用走后再使用
+    5.4. borrow 使用函数&amp;mut String参数把所有权借用走后clear原变量后再使用
+6. If / Else
+    6.1. 尝试 if {}
+    6.2. 尝试 if {} else {}
+    6.3. 尝试 if {} else if {} else {}
+    6.4. 尝试 "三元表达式" let data = if { 5 } else { 6 }
+7. Vec, Array, Slice
+    Vec:
+        7.1 Vec::new() || Vec::with_capacity(5) || v.push ||  v.len || v.capacity
+        7.2 体验vec的扩容
+        7.3 vec![1, 2, 3, 4, 5]
+    Array:
+        7.4 let array: [u32; 2] = [1, 2];
+    Slice:
+        7.5 定义一个函数带有&amp;[u32]参数体验slice, 并尝试传入array试下, 尝试传入Vec试下
+8. For, While, Loop
+    8.1 使用for x in vec遍历Vec, 然后遍历后再尝试使用vec, 体验下所有权转移; 然后使用&amp;vec体验下borrow
+    8.2 使用 while condition {} 迭代变量 体验这种循环 break; 不修改迭代变量体验infinite loop
+    8.3 使用Loop来体验infinite loop, 使用break 123; 返回循环结果并使用变量接收
+9. 定义structs
+    9.1 定义Struct Player {name, hp}, 声明实例并使用通过名称 player.name, player.hp
+    9.2 定义Struct Position(u32, u32), 声明实例并使用通过索引 p.0, p.1
+    9.3 为Struct添加行为, 定义&amp;self的参数使用实例的状态 instance method
+    9.4 为Struct添加行为, associated functions, 并返回Self类型
+    9.5 为实例结构使用 let Player {pname, plocation, .. } = p; || fn test(Player {location: Position(x, y), name}: Player) {} 解构
+10. Enum and Match
+    10.1 使用enum State {Start, Running {hp: u32}, GameOver(Animation)} enum Animation {Running, Stopped,}定义一个枚举, 声明enum变量并使用
+    10.2 使用match state { State::Start=&gt; {} \n State::Running {ref mut hp}=&gt;{} \n State::GameOver(Animation::Running) =&gt; {}, State::GameOver(Animation::Stopped) =&gt; {}, _ =&gt; {}} 类似switch
+    10.3 可以接受match的返回值, 类似 "三元表达式" let data = match value {0..=5 =&gt; "", 6 =&gt; "", 7 =&gt; "", _ =&gt; ""};
+11. Option&lt;T&gt;
+    11.1 定义一个根据id查询name的函数, 存在查询不到的情况,用option包装 fn test(id: u32) -&gt; Option&lt;String&gt; {}
+    11.2 使用match处理Option, let data = match look_up(1) {Some(p) =&gt; p, None =&gt; return };
+    11.3 在需要返回Option&lt;()&gt;的结果中去处理时可以简化 let data look_up(1)?; 返回也可以简化 Some(())
+12. traits
+    12.1 定义Struct Rect, Struct Circle, trait Drawable {fn draw(&amp;self);} impl Drawable for Rect{}; impl Drawable for Circle{}; 使用vec![Box::new(rect), Box::new(circle)], 定义同trait的Vec&lt;Box&lt;dyn Drawable&gt;&gt;, 运行时自己推断;
+    12.2 尝试在trait中定义方法默认实现
+    12.3 尝试相同的struct中实现不同的trait, 且不同的trait中存在相同的方法, 尝试使用实例调用这个相同的方法, 如果不行,使用Drawable::draw(rect);调用再试试;
+13. Generics
+    13.1 定义struct使用泛型 struct World&lt;T&gt; {player:T}    struct Player {hp: u32}  impl Player {fn take_damage(&amp;mut self, damage: u32) {}} 声明world, 并调用debug
+    13.2 定义struct DebugPlayer {inner: Player} 包装Player, 并添加debug信息println
+    13.3 使用泛型定义的struct作为参数时, fn use_world&lt;T: Damage&gt;(world: World&lt;T&gt;) {} 可以定义trait限制泛型的范围  修改为调用use_world
+    13.4 为world添加方法时使用泛型 impl&lt;T: Damage&gt; World&lt;T&gt; {} 并再次修改调用,  修改为调用world中定义的方法
+    13.5 定义多个泛型,使用common隔开 struct Thing&lt;T, U&gt; {a: T, b: U} trait: A, trait: B
+14. Associates types
+    14.1 trait Producer { type Input: Debug; type Output: Debug;  fn produce(&amp;self, input: Self::Input) -&gt; Self::Output;}
+         fn use_produce(p: impl Producer) {}
+    14.2 trait Generic&lt;I: Debug, O: Debug&gt; { fn produce(&amp;self, input: I) -&gt; O;}
+        fn use_generic&lt;I: Debug, O: Debug&gt;(g: impl Generic&lt;I, O&gt;){}
+        fn use_generic&lt;I: Debug + Default, O: Debug + Default&gt;(g: impl Generic&lt;I, O&gt;){}如果有很多个trait呢?
+        fn use_generic&lt;I, O&gt;(g: impl Generic&lt;I, O&gt;) where I: Debug + Default, O: Debug + Default {}
+</code></pre>
 
                     </main>
 
