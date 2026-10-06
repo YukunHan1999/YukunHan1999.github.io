@@ -9,26 +9,26 @@ use std::process::Command;
 const BOOKS: &[(&str, &str, &str, &str)] = &[
     (
         "Projects",
-        "Rust for C/C++ Programmers",
-        "Move semantics, RAII, FFI, embedded, no_std",
+        "项目",
+        "有明确目标和期限的事情，例如“完成个人网站”“准备面试”。项目结束后通常归档。",
         "bridge",
     ),
     (
         "Areas",
-        "Rust for C# Programmers",
-        "Best for Swift / C# / Java developers",
+        "领域",
+        "需要长期维护的责任范围，没有固定终点，例如健康、工作、财务、家庭。我长期要做什么",
         "bridge",
     ),
     (
         "Resources",
-        "Rust for Python Programmers",
-        "Dynamic → static typing, GIL-free concurrency",
+        "资源",
+        "以后可能用得上的主题资料，例如 Rust 笔记、网页设计灵感、旅行信息。",
         "bridge",
     ),
     (
         "Archives",
-        "Async Rust: From Futures to Production",
-        "Tokio, streams, cancellation safety",
+        "归档",
+        "已经完成、暂停或暂时不再活跃的项目，以及不再维护的领域和资源。",
         "deep-dive",
     ),
 ];
@@ -181,7 +181,7 @@ fn write_landing_page(site: &Path) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rust Training Books</title>
+  <title>PARA</title>
   <style>
     :root {{
       --bg: #1a1a2e;
@@ -267,11 +267,10 @@ fn write_landing_page(site: &Path) {
   </style>
 </head>
 <body>
-  <h1>🦀 <span>Rust</span> Training Books</h1>
-  <p class="subtitle">Pick the guide that matches your background</p>
+  <h1>🦀 <span>PARA</span> 个人信息管理</h1>
 
   <div class="legend">
-    <span class="legend-item"><span class="legend-dot" style="background:var(--clr-bridge)"></span> Bridge &mdash; learn Rust from another language</span>
+    <span class="legend-item"><span class="legend-dot" style="background:var(--clr-bridge)"></span> Bridge</span>
     <span class="legend-item"><span class="legend-dot" style="background:var(--clr-deep-dive)"></span> Deep Dive</span>
     <span class="legend-item"><span class="legend-dot" style="background:var(--clr-advanced)"></span> Advanced</span>
     <span class="legend-item"><span class="legend-dot" style="background:var(--clr-expert)"></span> Expert</span>
