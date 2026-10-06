@@ -11,25 +11,25 @@ const BOOKS: &[(&str, &str, &str, &str)] = &[
         "Projects",
         "项目",
         "有明确目标和期限的事情，例如“完成个人网站”“准备面试”。项目结束后通常归档。",
-        "bridge",
+        "project",
     ),
     (
         "Areas",
         "领域",
-        "需要长期维护的责任范围，没有固定终点，例如健康、工作、财务、家庭。我长期要做什么",
-        "bridge",
+        "需要长期维护的责任范围，没有固定终点，例如健康、工作、财务、家庭。",
+        "area",
     ),
     (
         "Resources",
         "资源",
         "以后可能用得上的主题资料，例如 Rust 笔记、网页设计灵感、旅行信息。",
-        "bridge",
+        "resource",
     ),
     (
         "Archives",
         "归档",
         "已经完成、暂停或暂时不再活跃的项目，以及不再维护的领域和资源。",
-        "deep-dive",
+        "archive",
     ),
 ];
 
@@ -151,11 +151,10 @@ fn build_to(dir_name: &str) {
 
 fn category_label(cat: &str) -> &str {
     match cat {
-        "bridge" => "Bridge",
-        "deep-dive" => "Deep Dive",
-        "advanced" => "Advanced",
-        "expert" => "Expert",
-        "practices" => "Practices",
+        "project" => "Project",
+        "area" => "Area",
+        "resource" => "Resource",
+        "archive" => "Archive",
         _ => cat,
     }
 }
@@ -189,11 +188,10 @@ fn write_landing_page(site: &Path) {
       --accent: #e94560;
       --text: #eee;
       --muted: #a8a8b3;
-      --clr-bridge: #4ade80;
-      --clr-deep-dive: #22d3ee;
-      --clr-advanced: #fbbf24;
-      --clr-expert: #c084fc;
-      --clr-practices: #2dd4bf;
+      --clr-project: #E98A3A;
+      --clr-resource: #4F9D69;
+      --clr-area: #4A83C4;
+      --clr-archive: #8A8F98;
     }}
     * {{ margin: 0; padding: 0; box-sizing: border-box; }}
     body {{
@@ -249,11 +247,10 @@ fn write_landing_page(site: &Path) {
     .card p  {{ color: var(--muted); font-size: 0.9rem; line-height: 1.4; }}
 
     /* Category colours */
-    .cat-bridge     {{ --stripe: var(--clr-bridge); }}
-    .cat-deep-dive  {{ --stripe: var(--clr-deep-dive); }}
-    .cat-advanced   {{ --stripe: var(--clr-advanced); }}
-    .cat-expert     {{ --stripe: var(--clr-expert); }}
-    .cat-practices  {{ --stripe: var(--clr-practices); }}
+    .cat-project     {{ --stripe: var(--clr-project); }}
+    .cat-area  {{ --stripe: var(--clr-area); }}
+    .cat-resource   {{ --stripe: var(--clr-resource); }}
+    .cat-archive     {{ --stripe: var(--clr-archive); }}
 
     /* Label pill */
     .label {{
@@ -270,11 +267,10 @@ fn write_landing_page(site: &Path) {
   <h1>🦀 <span>PARA</span> 个人信息管理</h1>
 
   <div class="legend">
-    <span class="legend-item"><span class="legend-dot" style="background:var(--clr-bridge)"></span> Bridge</span>
-    <span class="legend-item"><span class="legend-dot" style="background:var(--clr-deep-dive)"></span> Deep Dive</span>
-    <span class="legend-item"><span class="legend-dot" style="background:var(--clr-advanced)"></span> Advanced</span>
-    <span class="legend-item"><span class="legend-dot" style="background:var(--clr-expert)"></span> Expert</span>
-    <span class="legend-item"><span class="legend-dot" style="background:var(--clr-practices)"></span> Practices</span>
+    <span class="legend-item"><span class="legend-dot" style="background:var(--clr-project)"></span> Project</span>
+    <span class="legend-item"><span class="legend-dot" style="background:var(--clr-area)"></span> Area</span>
+    <span class="legend-item"><span class="legend-dot" style="background:var(--clr-resource)"></span> Resource</span>
+    <span class="legend-item"><span class="legend-dot" style="background:var(--clr-archive)"></span> Archive</span>
   </div>
 
   <div class="grid">
