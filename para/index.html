@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PARA</title>
+  <style>
+    :root {
+      --bg: #1a1a2e;
+      --card-bg: #16213e;
+      --accent: #e94560;
+      --text: #eee;
+      --muted: #a8a8b3;
+      --clr-project: #E98A3A;
+      --clr-resource: #4F9D69;
+      --clr-area: #4A83C4;
+      --clr-archive: #8A8F98;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+    }
+    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    h1 span { color: var(--accent); }
+    .subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 1.2rem; }
+
+    /* Legend */
+    .legend {
+      display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem;
+      justify-content: center; margin-bottom: 2.2rem;
+      font-size: 0.8rem; color: var(--muted);
+    }
+    .legend-item { display: flex; align-items: center; gap: 0.35rem; }
+    .legend-dot {
+      width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+    }
+
+    /* Grid & Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      width: 100%;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.15s, box-shadow 0.15s;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-left: 4px solid var(--stripe);
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px color-mix(in srgb, var(--stripe) 30%, transparent);
+      border-color: rgba(255,255,255,0.08);
+      border-left-color: var(--stripe);
+    }
+    .card h2 { font-size: 1.2rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+    .card p  { color: var(--muted); font-size: 0.9rem; line-height: 1.4; }
+
+    /* Category colours */
+    .cat-project     { --stripe: var(--clr-project); }
+    .cat-area  { --stripe: var(--clr-area); }
+    .cat-resource   { --stripe: var(--clr-resource); }
+    .cat-archive     { --stripe: var(--clr-archive); }
+
+    /* Label pill */
+    .label {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 0.15em 0.55em;
+      border-radius: 4px; white-space: nowrap; flex-shrink: 0;
+      color: var(--bg); background: var(--stripe);
+    }
+
+    footer { margin-top: 3rem; color: var(--muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <h1>🦀 <span>PARA</span> 个人信息管理</h1>
+
+  <div class="legend">
+    <span class="legend-item"><span class="legend-dot" style="background:var(--clr-project)"></span> Project</span>
+    <span class="legend-item"><span class="legend-dot" style="background:var(--clr-area)"></span> Area</span>
+    <span class="legend-item"><span class="legend-dot" style="background:var(--clr-resource)"></span> Resource</span>
+    <span class="legend-item"><span class="legend-dot" style="background:var(--clr-archive)"></span> Archive</span>
+  </div>
+
+  <div class="grid">
+    <a class="card cat-project" href="Projects/">
+      <h2>项目 <span class="label">Project</span></h2>
+      <p>有明确目标和期限的事情，例如“完成个人网站”“准备面试”。项目结束后通常归档。</p>
+    </a>
+    <a class="card cat-area" href="Areas/">
+      <h2>领域 <span class="label">Area</span></h2>
+      <p>需要长期维护的责任范围，没有固定终点，例如健康、工作、财务、家庭。</p>
+    </a>
+    <a class="card cat-resource" href="Resources/">
+      <h2>资源 <span class="label">Resource</span></h2>
+      <p>以后可能用得上的主题资料，例如 Rust 笔记、网页设计灵感、旅行信息。</p>
+    </a>
+    <a class="card cat-archive" href="Archives/">
+      <h2>归档 <span class="label">Archive</span></h2>
+      <p>已经完成、暂停或暂时不再活跃的项目，以及不再维护的领域和资源。</p>
+    </a>
+  </div>
+  <footer>Built with <a href="https://rust-lang.github.io/mdBook/" style="color:var(--accent)">mdBook</a></footer>
+</body>
+</html>
